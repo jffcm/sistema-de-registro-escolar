@@ -1,0 +1,15 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Novo professor</title>
+</head>
+<body>
+<form action="/professores" method="POST">
+  <input type="text" placeholder="Nome" name="nome">
+  <input type="text" placeholder="Salário" name="salario">
+  <input type="text" placeholder="Status" name="statusProfessor">
+  <input type="submit" value="Adicionar">
+</form>
+</body>
+</html>
