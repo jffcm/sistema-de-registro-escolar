@@ -2,12 +2,18 @@ package me.joaof.regescweb.dto;
 
 import java.math.BigDecimal;
 
+//import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import me.joaof.regescweb.models.Professor;
 import me.joaof.regescweb.models.StatusProfessor;
 
 // DTO
 public class RequisicaoNovoProfessor {
+	@NotBlank
+	@NotNull
 	private String nome;
+	//@DecimalMin(value = "0")
 	private BigDecimal salario;
 	private StatusProfessor statusProfessor;
 	
