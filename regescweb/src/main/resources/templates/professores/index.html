@@ -1,17 +1,11 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
- <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Lista de professores</title>
- </head>
-  <body>
-	<div class="container mt-4">
-		<div class="row">
-			<h1>Lista de professores</h1>
-		</div>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: head('Lista de professores')}"></head>
+<body>
+<div class="container mt-4">
     <div class="row">
         <div class="col-12">
+			<header th:replace="~{fragmentos :: header('Lista de professores')}"></header>
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -29,10 +23,10 @@
                     <th class="col-1" scope="row" th:text="${professor.getId()}">ID</th>
                     <td class="col-4" th:text="${professor.getNome()}">Nome do Professor</td>
                     <td class="col-2" th:text="${professor.getSalario()}">Salário</td>
-                    <td class="col-2" th:text="${professor.getStatusProfessor()}">STATUS</td>-->
-                    <td class="col-1"><a href="#"></a></td>
-                    <td class="col-1"><a href="#">Editar</a></td>
-                    <td class="col-1"><a href="/professores/${professor.id}">Deletar</a></td>
+                    <td class="col-2" th:text="${professor.getStatusProfessor()}">STATUS</td>
+                    <td class="col-1"><a th:href="@{professores/{id}(id=${professor.getId()})}">Detalhes</a></td>
+                    <td class="col-1"><a th:href="@{professores/{id}/edit(id=${professor.getId()})}">Editar</a></td>
+                    <td class="col-1"><a th:href="@{professores/{id}/delete(id=${professor.getId()})}">Deletar</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -42,5 +36,5 @@
         <a href="/professores/new">Novo Professor</a>
     </div>
 </div>
-  </body>
+</body>
 </html>

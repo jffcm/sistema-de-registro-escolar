@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 import me.joaof.regescweb.models.Professor;
 
 @Repository
-public interface ProfessorRepository extends JpaRepository<Professor, Long> {
-
-}
+public interface ProfessorRepository extends JpaRepository<Professor, Long> {}

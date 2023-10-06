@@ -1,12 +1,12 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragmentos :: head('Novo professor')}"></head>
+<head th:replace="~{fragmentos :: head('Editar professor # ' + ${id})}"></head>
 
 <body>
-	<header th:replace="~{fragmentos :: header('Novo professor')}"></header>
+	<header th:replace="~{fragmentos :: header('Editar professor # ' + ${id})}"></header>
 	<div class="container">
-		<form th:object="${professorDto}" action="/professores" method="POST">
+		<form th:object="${professorDto}" th:action="@{/professores/{id}(id=${id})}" method="POST">
 			<div class="form-group">
 				<label for="formGroupExampleInput">Nome</label>
 				<input th:field="*{nome}" type="text" class="form-control" id="formGroupExampleInput"
@@ -30,7 +30,6 @@
 			</div>
 		</form>
 	</div>
-
 </body>
 
 </html>

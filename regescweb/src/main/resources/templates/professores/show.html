@@ -1,0 +1,25 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: head('Detalhes do professor')}"></head>
+
+<body>
+	<header th:replace="~{fragmentos :: header('Professor #' + ${professor.getId()})}"></header>
+	
+	<main>
+		<div class="container mt-4">
+			<div class="row">
+				<div class="col-12">
+					<strong>Nome:</strong> <span th:text="${professor.getNome()}"></span> <br/>
+					<strong>Salário</strong> <span th:text="${professor.getSalario()}"></span> <br/>
+					<strong>Status</strong> <span th:text="${professor.getStatusProfessor()}"></span> <br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<a th:href="@{/professores/{id}/edit(id=${professor.getId()})}">Editar</a> <a href="/professores">Voltar</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
